@@ -233,7 +233,7 @@ class OTAServerApplication(web.Application):
             logger.setLevel(logging.DEBUG)
 
         handlers = [
-            (r"/", OTAServerMainHandler),
+            (r"/{}".format(options.root_url), OTAServerMainHandler),
             (r"/publish", OTAServerPublishHandler),
             (r"/remove", OTAServerRemoveHandler),
             (r"/notify", OTAServerNotifyHandler),
